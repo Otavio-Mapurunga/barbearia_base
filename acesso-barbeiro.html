@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Acesso e cadastro da área do barbeiro da Barbearia Navalha.">
+<title>Área do barbeiro | Barbearia Navalha</title>
+<style>
+:root{--bg:#0f1115;--surface:#181b22;--surface2:#20242d;--text:#f5f7fa;--muted:#aeb6c2;--accent:#d6a85c;--accent2:#f0c97a;--success:#55c58a;--border:#303642;--danger:#ff8e8e;--focus:#8ec5ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#0f1115 0%,#151922 100%);color:var(--text);line-height:1.5}a{color:inherit}.container{width:min(1120px,92%);margin:0 auto}header{position:sticky;top:0;z-index:10;background:rgba(15,17,21,.96);border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;letter-spacing:.5px}.brand-mark{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:var(--accent);color:#17110a;font-size:21px}nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}nav a{font-size:14px;text-decoration:none;color:var(--muted);padding:10px 12px;border-radius:9px}nav a:hover,nav a[aria-current=page]{background:var(--surface2);color:var(--text)}main{padding:38px 0 64px}.eyebrow{display:inline-block;margin-bottom:11px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;color:var(--accent2);font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase}h1{font-size:clamp(32px,4vw,48px);line-height:1.08;margin:0 0 12px}h2{font-size:clamp(23px,3vw,30px);line-height:1.15;margin:0 0 8px}h3{font-size:18px;margin:0 0 8px}p{margin:0 0 12px}.lead{color:var(--muted);font-size:17px;max-width:700px}.muted{color:var(--muted)}.small{font-size:13px}.panel{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:24px;box-shadow:0 14px 30px rgba(0,0,0,.15)}.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:stretch;margin-bottom:28px}.hero-copy{padding:14px 0}.hero-info{display:flex;flex-direction:column;justify-content:center;gap:8px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:11px 16px;border:1px solid transparent;border-radius:10px;text-decoration:none;font:inherit;font-weight:800;cursor:pointer;transition:transform .15s ease,background .15s ease}.btn:hover{transform:translateY(-1px)}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}.primary{background:var(--accent);color:#17110a}.primary:hover{background:var(--accent2)}.secondary{background:transparent;border-color:var(--border);color:var(--text)}.secondary:hover{background:var(--surface2)}form{display:grid;gap:15px}.field{display:grid;gap:6px}label{font-size:14px;font-weight:700}input,select,textarea{width:100%;min-height:44px;padding:10px 12px;border:1px solid #3a414e;border-radius:9px;background:#101319;color:var(--text);font:inherit}input::placeholder{color:#7d8795}input:focus,select:focus,textarea:focus,a:focus-visible,button:focus-visible{outline:3px solid rgba(142,197,255,.35);outline-offset:2px;border-color:var(--focus)}.help{font-size:12px;color:var(--muted);margin:0}.notice{border-left:4px solid var(--accent);background:#211c14;padding:13px 15px;border-radius:0 10px 10px 0;color:#e9dfcf;font-size:14px;margin:16px 0}.divider-title{display:flex;gap:12px;align-items:center;margin-bottom:18px}.divider-title .number{width:30px;height:30px;display:grid;place-items:center;border-radius:9px;background:var(--surface2);color:var(--accent2);font-weight:800}footer{border-top:1px solid var(--border);padding:24px 0;color:var(--muted);font-size:13px}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0}.stat{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px}.stat span{display:block;color:var(--muted);font-size:13px}.stat strong{display:block;font-size:27px;margin-top:4px}.toolbar{display:flex;justify-content:space-between;align-items:end;gap:14px;flex-wrap:wrap;margin-bottom:18px}.inline-field{display:flex;gap:10px;align-items:end;flex-wrap:wrap}.inline-field .field{min-width:180px}.slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.slot{border:1px solid var(--border);border-left:4px solid var(--success);border-radius:12px;background:#14171d;padding:13px;min-width:0}.slot.blocked{border-left-color:var(--danger)}.slot.booked{border-left-color:var(--accent)}.slot-head{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px}.slot-time{font-size:20px;font-weight:800}.state{display:inline-block;font-size:11px;font-weight:800;padding:4px 7px;border-radius:999px;background:rgba(85,197,138,.13);color:var(--success)}.blocked .state{background:rgba(255,142,142,.12);color:var(--danger)}.booked .state{background:rgba(214,168,92,.13);color:var(--accent2)}.slot-detail{font-size:13px;color:var(--muted);min-height:38px}.slot-select{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:12px;color:var(--text);cursor:pointer}.slot-select input{width:17px;height:17px;min-height:0;accent-color:var(--accent)}.slot-select input:disabled{cursor:not-allowed}.schedule-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,.7fr);gap:18px;align-items:start}.appointment-list{display:grid;gap:10px}.appointment{padding:12px;border:1px solid var(--border);background:#14171d;border-radius:12px}.appointment strong{display:block}.appointment time{font-weight:800;color:var(--accent2);margin-right:8px}.empty{color:var(--muted);font-size:14px;padding:14px;border:1px dashed var(--border);border-radius:10px}.message{min-height:24px;color:var(--accent2);font-size:14px;margin:10px 0 0}.status-legend{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0 18px;font-size:12px;color:var(--muted)}.legend-dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;background:var(--success)}.legend-dot.yellow{background:var(--accent)}.legend-dot.red{background:var(--danger)}
+@media(max-width:850px){.hero,.schedule-layout{grid-template-columns:1fr}.slots{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:620px){.nav{align-items:flex-start;flex-direction:column;padding:14px 0}nav{width:100%;justify-content:flex-start}.grid,.stats{grid-template-columns:1fr}.slots{grid-template-columns:1fr}.panel{padding:18px}main{padding-top:28px}.hero{gap:8px}.inline-field{width:100%}.inline-field .field{flex:1;min-width:140px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="container nav">
+<a class="brand" href="index.html" aria-label="Barbearia Navalha - página inicial"><span class="brand-mark" aria-hidden="true">✂</span><span>Barbearia Navalha</span></a>
+<nav aria-label="Navegação principal"><a href="index.html">Início</a><a href="agendamento.html">Agendar</a><a href="confirmacao.html">Confirmação</a><a href="acesso-barbeiro.html" aria-current="page">Área do barbeiro</a><a href="painel-barbeiro.html">Painel</a></nav>
+</div></header>
+<main><div class="container">
+<section class="hero" aria-labelledby="page-title">
+<div class="hero-copy"><span class="eyebrow">Área profissional</span><h1 id="page-title">Sua barbearia, sua agenda.</h1><p class="lead">Entre para acompanhar os horários ou cadastre o perfil da sua barbearia para organizar os períodos de atendimento.</p><div class="actions"><a class="btn primary" href="#cadastro">Cadastrar minha barbearia ↓</a><a class="btn secondary" href="painel-barbeiro.html">Ver painel demonstrativo</a></div></div>
+<aside class="panel hero-info"><h3>O que você poderá gerenciar?</h3><p class="muted">✓ Horários livres e ocupados</p><p class="muted">✓ Pausa para almoço</p><p class="muted">✓ Bloqueios por emergência ou imprevisto</p><p class="muted">✓ Visão diária dos atendimentos</p></aside>
+</section>
+<div class="grid">
+<section class="panel" aria-labelledby="login-title"><div class="divider-title"><span class="number">1</span><div><h2 id="login-title">Entrar</h2><p class="muted small">Para um perfil já cadastrado neste navegador.</p></div></div>
+<form id="login-form">
+<div class="field"><label for="login-email">E-mail *</label><input id="login-email" name="email" type="email" autocomplete="email" placeholder="voce@barbearia.com" required></div>
+<div class="field"><label for="login-password">Senha *</label><input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Sua senha" required></div>
+<p class="help">Demonstração: a senha não é autenticada nem armazenada.</p>
+<button class="btn primary" type="submit">Entrar no painel →</button><p id="login-message" class="message" role="status" aria-live="polite"></p>
+</form></section>
+<section class="panel" id="cadastro" aria-labelledby="register-title"><div class="divider-title"><span class="number">2</span><div><h2 id="register-title">Cadastrar barbearia</h2><p class="muted small">Preencha os dados básicos do perfil.</p></div></div>
+<form id="register-form">
+<div class="field"><label for="barber-name">Seu nome *</label><input id="barber-name" name="barberName" type="text" autocomplete="name" placeholder="Ex.: Rafael Souza" required></div>
+<div class="field"><label for="shop-name">Nome da barbearia *</label><input id="shop-name" name="shopName" type="text" autocomplete="organization" placeholder="Ex.: Barbearia Navalha" required></div>
+<div class="field"><label for="register-email">E-mail *</label><input id="register-email" name="email" type="email" autocomplete="email" placeholder="voce@barbearia.com" required></div>
+<div class="field"><label for="register-password">Criar senha *</label><input id="register-password" name="password" type="password" minlength="6" autocomplete="new-password" placeholder="Mínimo de 6 caracteres" required><p class="help">No protótipo, a senha serve apenas para demonstrar o campo e não será salva.</p></div>
+<button class="btn primary" type="submit">Cadastrar e abrir painel →</button>
+</form></section>
+</div>
+<div class="notice"><strong>Importante:</strong> o GitHub Pages hospeda arquivos estáticos. Este cadastro salva somente nome, barbearia e e-mail no armazenamento local deste navegador; não cria uma conta real, não sincroniza entre aparelhos e não deve ser usado com dados sensíveis.</div>
+</div></main>
+<footer><div class="container"><p><strong>Barbearia Navalha</strong> · Protótipo demonstrativo de navegação e gestão de agenda.</p><p class="small">O projeto é estático e não possui autenticação segura nem banco de dados compartilhado.</p></div></footer>
+<script>
+(function(){
+  const PROFILE_KEY = 'navalhaBarberProfile';
+  const loginForm = document.getElementById('login-form');
+  const registerForm = document.getElementById('register-form');
+  const loginMessage = document.getElementById('login-message');
+  loginForm.addEventListener('submit', function(event){
+    event.preventDefault();
+    const email = document.getElementById('login-email').value.trim().toLowerCase();
+    let profile = null;
+    try { profile = JSON.parse(localStorage.getItem(PROFILE_KEY) || 'null'); } catch (_) {}
+    if (!profile || !profile.email || profile.email.toLowerCase() !== email) {
+      loginMessage.textContent = 'Nenhum perfil com esse e-mail foi cadastrado neste navegador. Use o formulário de cadastro para testar o fluxo.';
+      return;
+    }
+    window.location.href = 'painel-barbeiro.html';
+  });
+  registerForm.addEventListener('submit', function(event){
+    event.preventDefault();
+    const profile = {
+      barberName: document.getElementById('barber-name').value.trim(),
+      shopName: document.getElementById('shop-name').value.trim(),
+      email: document.getElementById('register-email').value.trim().toLowerCase()
+    };
+    try { localStorage.setItem(PROFILE_KEY, JSON.stringify(profile)); } catch (_) {}
+    window.location.href = 'painel-barbeiro.html';
+  });
+})();
+</script>
+</body></html>

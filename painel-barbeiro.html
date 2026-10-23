@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Painel de agenda e disponibilidade da Barbearia Navalha.">
+<title>Painel do barbeiro | Barbearia Navalha</title>
+<style>
+:root{--bg:#0f1115;--surface:#181b22;--surface2:#20242d;--text:#f5f7fa;--muted:#aeb6c2;--accent:#d6a85c;--accent2:#f0c97a;--success:#55c58a;--border:#303642;--danger:#ff8e8e;--focus:#8ec5ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#0f1115 0%,#151922 100%);color:var(--text);line-height:1.5}a{color:inherit}.container{width:min(1120px,92%);margin:0 auto}header{position:sticky;top:0;z-index:10;background:rgba(15,17,21,.96);border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;letter-spacing:.5px}.brand-mark{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:var(--accent);color:#17110a;font-size:21px}nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}nav a{font-size:14px;text-decoration:none;color:var(--muted);padding:10px 12px;border-radius:9px}nav a:hover,nav a[aria-current=page]{background:var(--surface2);color:var(--text)}main{padding:38px 0 64px}.eyebrow{display:inline-block;margin-bottom:11px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;color:var(--accent2);font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase}h1{font-size:clamp(32px,4vw,48px);line-height:1.08;margin:0 0 12px}h2{font-size:clamp(23px,3vw,30px);line-height:1.15;margin:0 0 8px}h3{font-size:18px;margin:0 0 8px}p{margin:0 0 12px}.lead{color:var(--muted);font-size:17px;max-width:700px}.muted{color:var(--muted)}.small{font-size:13px}.panel{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:24px;box-shadow:0 14px 30px rgba(0,0,0,.15)}.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:stretch;margin-bottom:28px}.hero-copy{padding:14px 0}.hero-info{display:flex;flex-direction:column;justify-content:center;gap:8px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:11px 16px;border:1px solid transparent;border-radius:10px;text-decoration:none;font:inherit;font-weight:800;cursor:pointer;transition:transform .15s ease,background .15s ease}.btn:hover{transform:translateY(-1px)}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}.primary{background:var(--accent);color:#17110a}.primary:hover{background:var(--accent2)}.secondary{background:transparent;border-color:var(--border);color:var(--text)}.secondary:hover{background:var(--surface2)}form{display:grid;gap:15px}.field{display:grid;gap:6px}label{font-size:14px;font-weight:700}input,select,textarea{width:100%;min-height:44px;padding:10px 12px;border:1px solid #3a414e;border-radius:9px;background:#101319;color:var(--text);font:inherit}input::placeholder{color:#7d8795}input:focus,select:focus,textarea:focus,a:focus-visible,button:focus-visible{outline:3px solid rgba(142,197,255,.35);outline-offset:2px;border-color:var(--focus)}.help{font-size:12px;color:var(--muted);margin:0}.notice{border-left:4px solid var(--accent);background:#211c14;padding:13px 15px;border-radius:0 10px 10px 0;color:#e9dfcf;font-size:14px;margin:16px 0}.divider-title{display:flex;gap:12px;align-items:center;margin-bottom:18px}.divider-title .number{width:30px;height:30px;display:grid;place-items:center;border-radius:9px;background:var(--surface2);color:var(--accent2);font-weight:800}footer{border-top:1px solid var(--border);padding:24px 0;color:var(--muted);font-size:13px}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0}.stat{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px}.stat span{display:block;color:var(--muted);font-size:13px}.stat strong{display:block;font-size:27px;margin-top:4px}.toolbar{display:flex;justify-content:space-between;align-items:end;gap:14px;flex-wrap:wrap;margin-bottom:18px}.inline-field{display:flex;gap:10px;align-items:end;flex-wrap:wrap}.inline-field .field{min-width:180px}.slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.slot{border:1px solid var(--border);border-left:4px solid var(--success);border-radius:12px;background:#14171d;padding:13px;min-width:0}.slot.blocked{border-left-color:var(--danger)}.slot.booked{border-left-color:var(--accent)}.slot-head{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px}.slot-time{font-size:20px;font-weight:800}.state{display:inline-block;font-size:11px;font-weight:800;padding:4px 7px;border-radius:999px;background:rgba(85,197,138,.13);color:var(--success)}.blocked .state{background:rgba(255,142,142,.12);color:var(--danger)}.booked .state{background:rgba(214,168,92,.13);color:var(--accent2)}.slot-detail{font-size:13px;color:var(--muted);min-height:38px}.slot-select{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:12px;color:var(--text);cursor:pointer}.slot-select input{width:17px;height:17px;min-height:0;accent-color:var(--accent)}.slot-select input:disabled{cursor:not-allowed}.schedule-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,.7fr);gap:18px;align-items:start}.appointment-list{display:grid;gap:10px}.appointment{padding:12px;border:1px solid var(--border);background:#14171d;border-radius:12px}.appointment strong{display:block}.appointment time{font-weight:800;color:var(--accent2);margin-right:8px}.empty{color:var(--muted);font-size:14px;padding:14px;border:1px dashed var(--border);border-radius:10px}.message{min-height:24px;color:var(--accent2);font-size:14px;margin:10px 0 0}.status-legend{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0 18px;font-size:12px;color:var(--muted)}.legend-dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;background:var(--success)}.legend-dot.yellow{background:var(--accent)}.legend-dot.red{background:var(--danger)}
+@media(max-width:850px){.hero,.schedule-layout{grid-template-columns:1fr}.slots{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:620px){.nav{align-items:flex-start;flex-direction:column;padding:14px 0}nav{width:100%;justify-content:flex-start}.grid,.stats{grid-template-columns:1fr}.slots{grid-template-columns:1fr}.panel{padding:18px}main{padding-top:28px}.hero{gap:8px}.inline-field{width:100%}.inline-field .field{flex:1;min-width:140px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="container nav">
+<a class="brand" href="index.html" aria-label="Barbearia Navalha - página inicial"><span class="brand-mark" aria-hidden="true">✂</span><span>Barbearia Navalha</span></a>
+<nav aria-label="Navegação principal"><a href="index.html">Início</a><a href="agendamento.html">Agendar</a><a href="confirmacao.html">Confirmação</a><a href="acesso-barbeiro.html" >Área do barbeiro</a><a href="painel-barbeiro.html" aria-current="page">Painel</a></nav>
+</div></header>
+<main><div class="container">
+<section class="hero" aria-labelledby="page-title">
+<div class="hero-copy"><span class="eyebrow">Painel profissional</span><h1 id="page-title">Agenda da barbearia</h1><p class="lead" id="welcome-line">Acompanhe os clientes, libere períodos e bloqueie os horários em que não poderá atender.</p><div class="actions"><a class="btn secondary" href="acesso-barbeiro.html">← Voltar ao acesso</a></div></div>
+<aside class="panel hero-info"><p class="muted small">BARBEARIA</p><h2 id="shop-display">Barbearia Navalha</h2><p class="muted" id="barber-display">Perfil demonstrativo</p><p class="small muted">Os dados da agenda são guardados apenas neste navegador.</p></aside>
+</section>
+<div class="toolbar"><div><span class="eyebrow">Visão diária</span><h2>Horários e disponibilidade</h2><p class="muted small">Selecione os horários livres ou bloqueados para alterar o status.</p></div><div class="inline-field"><div class="field"><label for="agenda-date">Data da agenda</label><input id="agenda-date" type="date"></div></div></div>
+<section class="stats" aria-label="Resumo dos horários">
+<div class="stat"><span>Clientes marcados</span><strong id="count-booked">0</strong></div><div class="stat"><span>Horários disponíveis</span><strong id="count-available">0</strong></div><div class="stat"><span>Horários bloqueados</span><strong id="count-blocked">0</strong></div>
+</section>
+<div class="schedule-layout">
+<section class="panel" aria-labelledby="slots-title"><h2 id="slots-title">Grade de horários</h2><p class="muted small">Cada bloco representa um horário de início de atendimento. Clientes marcados não podem ser bloqueados.</p>
+<div class="status-legend"><span><i class="legend-dot"></i> Disponível</span><span><i class="legend-dot yellow"></i> Cliente marcado</span><span><i class="legend-dot red"></i> Bloqueado</span></div>
+<div id="slots" class="slots" aria-live="polite"></div>
+<div class="notice"><strong>Como bloquear:</strong> marque as caixas dos horários que deseja fechar, escolha o motivo e clique em “Bloquear selecionados”. Para reabrir, selecione os horários bloqueados e clique em “Liberar selecionados”.</div>
+<div class="grid" style="margin-top:16px;">
+<div class="field"><label for="block-reason">Motivo do bloqueio</label><select id="block-reason"><option value="Pausa para almoço">Pausa para almoço</option><option value="Emergência">Emergência</option><option value="Compromisso pessoal">Compromisso pessoal</option><option value="Outro imprevisto">Outro imprevisto</option></select></div>
+<div class="field"><label for="custom-reason">Detalhe opcional</label><input id="custom-reason" type="text" maxlength="70" placeholder="Ex.: retorno às 14h"></div>
+</div>
+<div class="actions"><button id="block-button" class="btn primary" type="button">Bloquear selecionados</button><button id="release-button" class="btn secondary" type="button">Liberar selecionados</button></div>
+<p id="schedule-message" class="message" role="status" aria-live="polite"></p>
+</section>
+<aside class="panel" aria-labelledby="appointments-title"><h2 id="appointments-title">Próximos clientes</h2><p class="muted small">Atendimentos demonstrativos da data selecionada.</p><div id="appointments" class="appointment-list" style="margin-top:16px;"></div><div class="notice">Os clientes desta demonstração são exemplos visuais. Os agendamentos da página pública ainda não são enviados para este painel.</div></aside>
+</div>
+</div></main>
+<footer><div class="container"><p><strong>Barbearia Navalha</strong> · Protótipo demonstrativo de navegação e gestão de agenda.</p><p class="small">O projeto é estático e não possui autenticação segura nem banco de dados compartilhado.</p></div></footer>
+<script>
+(function(){
+  const PROFILE_KEY = 'navalhaBarberProfile';
+  const TIMES = ['08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00'];
+  const dateInput = document.getElementById('agenda-date');
+  const slotsElement = document.getElementById('slots');
+  const appointmentsElement = document.getElementById('appointments');
+  const messageElement = document.getElementById('schedule-message');
+  const reasonSelect = document.getElementById('block-reason');
+  const customReason = document.getElementById('custom-reason');
+  let schedule = {};
+
+  function localDateString(date){
+    return date.getFullYear() + '-' + String(date.getMonth()+1).padStart(2,'0') + '-' + String(date.getDate()).padStart(2,'0');
+  }
+  function keyForDate(date){ return 'navalhaAgenda-' + date; }
+  function defaultSchedule(date){
+    const result = {};
+    TIMES.forEach(time => result[time] = {status:'available', detail:'Disponível para agendamento'});
+    result['12:00'] = {status:'blocked', detail:'Pausa para almoço'};
+    result['13:00'] = {status:'blocked', detail:'Pausa para almoço'};
+    if (date === localDateString(new Date())) {
+      result['09:00'] = {status:'booked', detail:'João Silva · Corte tradicional'};
+      result['11:00'] = {status:'booked', detail:'Pedro Costa · Barba completa'};
+      result['15:00'] = {status:'booked', detail:'Marcos Lima · Corte + barba'};
+      result['18:00'] = {status:'booked', detail:'André Souza · Corte tradicional'};
+    }
+    return result;
+  }
+  function loadSchedule(date){
+    try {
+      const saved = localStorage.getItem(keyForDate(date));
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        const defaults = defaultSchedule(date);
+        TIMES.forEach(time => {
+          if (parsed[time] && ['available','blocked','booked'].includes(parsed[time].status)) defaults[time] = parsed[time];
+        });
+        return defaults;
+      }
+    } catch (_) {}
+    return defaultSchedule(date);
+  }
+  function saveSchedule(){
+    try { localStorage.setItem(keyForDate(dateInput.value), JSON.stringify(schedule)); }
+    catch (_) { messageElement.textContent = 'Não foi possível salvar neste navegador. Verifique as permissões de armazenamento.'; }
+  }
+  function createText(tag, className, content){
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    node.textContent = content;
+    return node;
+  }
+  function render(){
+    slotsElement.replaceChildren();
+    appointmentsElement.replaceChildren();
+    let booked = 0, available = 0, blocked = 0;
+    TIMES.forEach(time => {
+      const item = schedule[time];
+      if (item.status === 'booked') booked++;
+      if (item.status === 'available') available++;
+      if (item.status === 'blocked') blocked++;
+      const card = document.createElement('article');
+      card.className = 'slot ' + (item.status === 'booked' ? 'booked' : item.status === 'blocked' ? 'blocked' : 'available');
+      const head = document.createElement('div'); head.className = 'slot-head';
+      head.appendChild(createText('span','slot-time',time));
+      const stateText = item.status === 'booked' ? 'Agendado' : item.status === 'blocked' ? 'Bloqueado' : 'Livre';
+      head.appendChild(createText('span','state',stateText)); card.appendChild(head);
+      card.appendChild(createText('p','slot-detail',item.detail || 'Disponível para agendamento'));
+      const selectLabel = document.createElement('label'); selectLabel.className = 'slot-select';
+      const checkbox = document.createElement('input'); checkbox.type = 'checkbox'; checkbox.className = 'slot-checkbox'; checkbox.value = time;
+      checkbox.setAttribute('aria-label','Selecionar horário ' + time);
+      if (item.status === 'booked') { checkbox.disabled = true; selectLabel.appendChild(checkbox); selectLabel.appendChild(document.createTextNode('Cliente marcado')); }
+      else { selectLabel.appendChild(checkbox); selectLabel.appendChild(document.createTextNode('Selecionar horário')); }
+      card.appendChild(selectLabel); slotsElement.appendChild(card);
+      if (item.status === 'booked') {
+        const row = document.createElement('div'); row.className = 'appointment';
+        const top = document.createElement('div'); const timeTag = document.createElement('time'); timeTag.textContent = time; top.appendChild(timeTag);
+        top.appendChild(createText('span','small muted','Confirmado (exemplo)')); row.appendChild(top);
+        row.appendChild(createText('strong','',item.detail));
+        appointmentsElement.appendChild(row);
+      }
+    });
+    document.getElementById('count-booked').textContent = booked;
+    document.getElementById('count-available').textContent = available;
+    document.getElementById('count-blocked').textContent = blocked;
+    if (!booked) appointmentsElement.appendChild(createText('div','empty','Não há clientes marcados nesta data de demonstração.'));
+  }
+  function selectedTimes(){ return Array.from(slotsElement.querySelectorAll('.slot-checkbox:checked:not(:disabled)')).map(box => box.value); }
+  document.getElementById('block-button').addEventListener('click', function(){
+    const selected = selectedTimes();
+    if (!selected.length) { messageElement.textContent = 'Selecione pelo menos um horário livre ou bloqueado.'; return; }
+    const baseReason = reasonSelect.value;
+    const detail = customReason.value.trim() ? baseReason + ' · ' + customReason.value.trim() : baseReason;
+    let changed = 0;
+    selected.forEach(time => {
+      if (schedule[time].status !== 'booked') { schedule[time] = {status:'blocked', detail:detail}; changed++; }
+    });
+    saveSchedule(); render(); messageElement.textContent = changed + ' horário(s) bloqueado(s) para ' + detail + '.';
+  });
+  document.getElementById('release-button').addEventListener('click', function(){
+    const selected = selectedTimes();
+    if (!selected.length) { messageElement.textContent = 'Selecione os horários que deseja liberar.'; return; }
+    let changed = 0;
+    selected.forEach(time => {
+      if (schedule[time].status === 'blocked') { schedule[time] = {status:'available', detail:'Disponível para agendamento'}; changed++; }
+    });
+    saveSchedule(); render(); messageElement.textContent = changed ? changed + ' horário(s) liberado(s).' : 'Os horários selecionados não estavam bloqueados.';
+  });
+  dateInput.addEventListener('change', function(){
+    if (!dateInput.value) return;
+    schedule = loadSchedule(dateInput.value); render(); messageElement.textContent = 'Agenda carregada para ' + dateInput.value + '.';
+  });
+
+  let profile = null;
+  try { profile = JSON.parse(localStorage.getItem(PROFILE_KEY) || 'null'); } catch (_) {}
+  if (profile && profile.shopName) document.getElementById('shop-display').textContent = profile.shopName;
+  if (profile && profile.barberName) {
+    document.getElementById('barber-display').textContent = 'Responsável: ' + profile.barberName;
+    document.getElementById('welcome-line').textContent = 'Olá, ' + profile.barberName + '. Acompanhe os clientes, libere períodos e bloqueie os horários em que não poderá atender.';
+  }
+  dateInput.value = localDateString(new Date());
+  dateInput.min = localDateString(new Date());
+  schedule = loadSchedule(dateInput.value);
+  render();
+})();
+</script>
+</body></html>
